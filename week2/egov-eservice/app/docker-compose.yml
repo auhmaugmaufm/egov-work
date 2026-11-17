@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./data:/data"
+    environment:
+      TEST_MODE: ${TEST_MODE:-}
+      BUG_MODE: ${BUG_MODE:-}
+      DB_PATH: /data/app.db
+      PORT: "3000"
+      PII_KEY: ${PII_KEY:-}
+      DOC_KEY: ${DOC_KEY:-}
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 10

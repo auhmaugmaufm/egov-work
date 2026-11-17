@@ -1,0 +1,3324 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/node_modules/.bin/playwright",
+      "test",
+      "--trace",
+      "off",
+      "--reporter=list,json"
+    ],
+    "configFile": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/playwright.config.ts",
+    "rootDir": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "part-a.spec.ts",
+          "part-b.spec.ts"
+        ],
+        "timeout": 180000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e",
+        "snapshotDir": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "part-a.spec.ts",
+          "part-b.spec.ts"
+        ],
+        "timeout": 180000,
+        "use": {
+          "baseURL": "http://localhost:3000",
+          "trace": "off",
+          "video": {
+            "mode": "on",
+            "size": {
+              "width": 1280,
+              "height": 800
+            }
+          },
+          "screenshot": "only-on-failure",
+          "acceptDownloads": true,
+          "locale": "th-TH",
+          "timezoneId": "Asia/Bangkok",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "part-a.spec.ts",
+      "file": "part-a.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-AUTH-01 เลขบัตร 13 หลัก + checksum",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 886,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ค่า 110170012345 (12 หลัก)",
+                      "duration": 118
+                    },
+                    {
+                      "title": "ค่า 11017001234567 (14 หลัก)",
+                      "duration": 88
+                    },
+                    {
+                      "title": "ค่า 1101700123457 (checksum ผิด)",
+                      "duration": 78
+                    },
+                    {
+                      "title": "ค่า 11017001234ab (ไม่ใช่ตัวเลขล้วน)",
+                      "duration": 79
+                    },
+                    {
+                      "title": "ค่า 1101700123456 (ถูก)",
+                      "duration": 78
+                    },
+                    {
+                      "title": "ค่า 3100600987659 (ถูก)",
+                      "duration": 75
+                    },
+                    {
+                      "title": "ค่า 1909900555015 (ถูก)",
+                      "duration": 76
+                    },
+                    {
+                      "title": "ค่า 5500400111221 (ถูก)",
+                      "duration": 76
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:07.323Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-AUTH-01-เลขบัตร-13-หลัก-checksum-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-dc49fcf89acee5ffb735",
+          "file": "part-a.spec.ts",
+          "line": 83,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-02 OTP ผิด 3 ครั้งล็อก 15 นาที",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 500,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 OTP ผิดครั้งที่ 1",
+                      "duration": 45
+                    },
+                    {
+                      "title": "2 OTP ผิดครั้งที่ 2",
+                      "duration": 46
+                    },
+                    {
+                      "title": "3 OTP ผิดครั้งที่ 3 → ล็อก",
+                      "duration": 52
+                    },
+                    {
+                      "title": "4 OTP ถูกขณะล็อก → 423",
+                      "duration": 11
+                    },
+                    {
+                      "title": "5 สมชายล็อกอินปกติ",
+                      "duration": 14
+                    },
+                    {
+                      "title": "6 09:14:59 ยังล็อก",
+                      "duration": 14
+                    },
+                    {
+                      "title": "7 09:15:00 ปลดล็อก ตัวนับเริ่มใหม่",
+                      "duration": 13
+                    },
+                    {
+                      "title": "8 OTP ถูก → ล็อกอินสำเร็จ",
+                      "duration": 5
+                    },
+                    {
+                      "title": "9 RESET: ผิด 2 → ถูก → ออก → ผิด 2 ไม่ล็อก",
+                      "duration": 40
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:08.329Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-AUTH-02-OTP-ผิด-3-ครั้งล็อก-15-นาที-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-66fac085e1a4d9bf64cb",
+          "file": "part-a.spec.ts",
+          "line": 122,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-03 ลงทะเบียนครั้งแรก",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 983,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 reg-name อ่านอย่างเดียว",
+                      "duration": 19
+                    },
+                    {
+                      "title": "2 เบอร์ 9 หลัก",
+                      "duration": 93
+                    },
+                    {
+                      "title": "3 เบอร์ 11 หลัก",
+                      "duration": 64
+                    },
+                    {
+                      "title": "4 เบอร์ไม่ขึ้นต้น 0 / มีตัวอักษร",
+                      "duration": 100
+                    },
+                    {
+                      "title": "5 ไม่ติ๊กยินยอม",
+                      "duration": 82
+                    },
+                    {
+                      "title": "6 ลงทะเบียนสำเร็จ",
+                      "duration": 91
+                    },
+                    {
+                      "title": "7 ออกแล้วเข้าใหม่ ไม่ผ่าน /register",
+                      "duration": 177
+                    },
+                    {
+                      "title": "8 RESET แล้วเรียก API ตรง",
+                      "duration": 33
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:08.833Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-AUTH-03-ลงทะเบียนครั้งแรก-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-0b0faceb37ae2732f0f3",
+          "file": "part-a.spec.ts",
+          "line": 208,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-04 เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้นตามบทบาท",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1749,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ล็อกอิน off.reg1",
+                      "duration": 220
+                    },
+                    {
+                      "title": "ล็อกอิน off.reg2",
+                      "duration": 177
+                    },
+                    {
+                      "title": "ล็อกอิน off.works1",
+                      "duration": 161
+                    },
+                    {
+                      "title": "ล็อกอิน head1",
+                      "duration": 162
+                    },
+                    {
+                      "title": "ล็อกอิน exec1",
+                      "duration": 162
+                    },
+                    {
+                      "title": "ล็อกอิน audit1",
+                      "duration": 181
+                    },
+                    {
+                      "title": "ล็อกอิน admin1",
+                      "duration": 164
+                    },
+                    {
+                      "title": "ผิด: รหัสผ่านผิด",
+                      "duration": 108
+                    },
+                    {
+                      "title": "ผิด: username ไม่มี",
+                      "duration": 110
+                    },
+                    {
+                      "title": "ผิด: เลขบัตรในช่อง username",
+                      "duration": 109
+                    },
+                    {
+                      "title": "หลัง logout เปิด /officer/queue → /login",
+                      "duration": 14
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:09.819Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-AUTH-04-เจ้าหน้า-469a1-จำลองและหน้าตั้งต้นตามบทบาท-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-57a200261fdac1542538",
+          "file": "part-a.spec.ts",
+          "line": 268,
+          "column": 1
+        },
+        {
+          "title": "TC-FEE-01 ค่าธรรมเนียม SV-01/SV-02/SV-03",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 763,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "SV-03 area=0",
+                      "duration": 26
+                    },
+                    {
+                      "title": "SV-03 area=-1",
+                      "duration": 8
+                    },
+                    {
+                      "title": "SV-03 area=1",
+                      "duration": 34
+                    },
+                    {
+                      "title": "SV-03 area=100",
+                      "duration": 10
+                    },
+                    {
+                      "title": "SV-03 area=101",
+                      "duration": 32
+                    },
+                    {
+                      "title": "SV-03 area=102",
+                      "duration": 36
+                    },
+                    {
+                      "title": "SV-03 area=250",
+                      "duration": 34
+                    },
+                    {
+                      "title": "SV-03 area=300",
+                      "duration": 34
+                    },
+                    {
+                      "title": "SV-03 area=499",
+                      "duration": 33
+                    },
+                    {
+                      "title": "SV-03 area=500",
+                      "duration": 33
+                    },
+                    {
+                      "title": "SV-03 area=501",
+                      "duration": 31
+                    },
+                    {
+                      "title": "SV-01 qty=0",
+                      "duration": 40
+                    },
+                    {
+                      "title": "SV-01 qty=1",
+                      "duration": 34
+                    },
+                    {
+                      "title": "SV-01 qty=2",
+                      "duration": 34
+                    },
+                    {
+                      "title": "SV-01 qty=3",
+                      "duration": 32
+                    },
+                    {
+                      "title": "SV-01 qty=4",
+                      "duration": 34
+                    },
+                    {
+                      "title": "SV-01 qty=5",
+                      "duration": 32
+                    },
+                    {
+                      "title": "SV-01 qty=6",
+                      "duration": 30
+                    },
+                    {
+                      "title": "SV-02 ฿500",
+                      "duration": 22
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:11.571Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-FEE-01-ค่าธรรมเนียม-SV-01-SV-02-SV-03-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-61b785af085dd0bfb2e5",
+          "file": "part-a.spec.ts",
+          "line": 324,
+          "column": 1
+        },
+        {
+          "title": "TC-SUBMIT-01 ยื่นคำขอ SV-01 ครบวงจร",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-16T15:38:12.338Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-SUBMIT-01-ยื่นคำขอ-SV-01-ครบวงจร-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-bc241ae3605463f84fd8",
+          "file": "part-a.spec.ts",
+          "line": 396,
+          "column": 1
+        },
+        {
+          "title": "TC-SUBMIT-02 เอกสารบังคับครบก่อนชำระ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 709,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "SV-02",
+                      "duration": 249
+                    },
+                    {
+                      "title": "SV-03 พื้นที่ 100",
+                      "duration": 211
+                    },
+                    {
+                      "title": "API MISSING_DOCS",
+                      "duration": 32
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:13.083Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-SUBMIT-02-เอกสารบังคับครบก่อนชำระ-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-41053454d840c19670f6",
+          "file": "part-a.spec.ts",
+          "line": 455,
+          "column": 1
+        },
+        {
+          "title": "TC-SUBMIT-03 ร่าง การลบร่าง และการยกเลิก",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1022,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A ร่าง",
+                      "duration": 288
+                    },
+                    {
+                      "title": "ส่วน B ยกเลิก",
+                      "duration": 215
+                    },
+                    {
+                      "title": "ส่วน C ยกเลิกไม่ได้เมื่อมีผู้รับ",
+                      "duration": 64
+                    },
+                    {
+                      "title": "ส่วน E ลบร่าง",
+                      "duration": 84
+                    },
+                    {
+                      "title": "ส่วน F ยกเลิกชนกับรับเรื่อง",
+                      "duration": 52
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:13.795Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-SUBMIT-03-ร่าง-การลบร่าง-และการยกเลิก-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-3788383bb1c41f1df0a8",
+          "file": "part-a.spec.ts",
+          "line": 519,
+          "column": 1
+        },
+        {
+          "title": "TC-UPLOAD-01 ขนาดและจำนวนไฟล์",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2077,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ขนาด 5,242,879 → รับ",
+                      "duration": 504
+                    },
+                    {
+                      "title": "ขนาด 5,242,880 → รับ (ขอบ)",
+                      "duration": 465
+                    },
+                    {
+                      "title": "ขนาด 5,242,881 → ปฏิเสธ",
+                      "duration": 102
+                    },
+                    {
+                      "title": "ขนาดผ่าน API",
+                      "duration": 269
+                    },
+                    {
+                      "title": "จำนวนไฟล์ผ่านจอ",
+                      "duration": 337
+                    },
+                    {
+                      "title": "จำนวนไฟล์ผ่าน API",
+                      "duration": 39
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:14.821Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-UPLOAD-01-ขนาดและจำนวนไฟล์-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-a5d0fa12e5fdddbddb20",
+          "file": "part-a.spec.ts",
+          "line": 643,
+          "column": 1
+        },
+        {
+          "title": "TC-UPLOAD-02 ชนิดไฟล์จากเนื้อไฟล์",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1143,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "UI รับ ok-id.pdf",
+                      "duration": 113
+                    },
+                    {
+                      "title": "UI รับ real.jpg",
+                      "duration": 85
+                    },
+                    {
+                      "title": "UI รับ real.png",
+                      "duration": 82
+                    },
+                    {
+                      "title": "UI ปฏิเสธ fake-text.pdf",
+                      "duration": 31
+                    },
+                    {
+                      "title": "UI ปฏิเสธ fake-text.jpg",
+                      "duration": 29
+                    },
+                    {
+                      "title": "UI ปฏิเสธ exe-as.png",
+                      "duration": 27
+                    },
+                    {
+                      "title": "UI ปฏิเสธ notes.txt",
+                      "duration": 29
+                    },
+                    {
+                      "title": "UI ปฏิเสธ fake-text.pdf + Content-Type application/pdf",
+                      "duration": 28
+                    },
+                    {
+                      "title": "API",
+                      "duration": 80
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:16.903Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-UPLOAD-02-ชนิดไฟล์จากเนื้อไฟล์-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-45949c6adfd386279f78",
+          "file": "part-a.spec.ts",
+          "line": 709,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-01 อายุ QR 15:00",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 405,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "รอบ 1 อายุ 5:00",
+                      "duration": 35
+                    },
+                    {
+                      "title": "รอบ 2 อายุ 14:59",
+                      "duration": 18
+                    },
+                    {
+                      "title": "รอบ 3 อายุ 15:00 → 410",
+                      "duration": 142
+                    },
+                    {
+                      "title": "รอบ 4 อายุ 15:01 → 410",
+                      "duration": 26
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:18.050Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-PAY-01-อายุ-QR-15-00-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-8530a2c66736e81c8012",
+          "file": "part-a.spec.ts",
+          "line": 763,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-02 ยอดเงินและ callback ซ้ำ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 93,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-16T15:38:18.459Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-9c89845263d537dbd678",
+          "file": "part-a.spec.ts",
+          "line": 808,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-03 ชำระพร้อมกัน เลขไม่ซ้ำ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-16T15:38:18.555Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-7cc22293b7b6572e21d8",
+          "file": "part-a.spec.ts",
+          "line": 836,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-04 เลขคำขอข้ามปี 2569 → 2570",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 23:58 สร้างร่าง + QR",
+                      "duration": 277
+                    },
+                    {
+                      "title": "2 23:59 ชำระ",
+                      "duration": 58
+                    },
+                    {
+                      "title": "3 ปี 2570 ใบแรก",
+                      "duration": 36
+                    },
+                    {
+                      "title": "4 ปี 2570 ใบที่ 2",
+                      "duration": 28
+                    },
+                    {
+                      "title": "5 เลขเดิมไม่ถูกแก้",
+                      "duration": 3
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:18.691Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-PAY-04-เลขคำขอข้ามปี-2569-→-2570-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-4e1b0cccb9ff8c70f9f8",
+          "file": "part-a.spec.ts",
+          "line": 870,
+          "column": 1
+        },
+        {
+          "title": "TC-QUEUE-01 ลำดับคิวและขอบเขตแผนก",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-16T15:38:19.271Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-QUEUE-01-ลำดับคิวและขอบเขตแผนก-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-f853e06da4be63ccdad3",
+          "file": "part-a.spec.ts",
+          "line": 916,
+          "column": 1
+        },
+        {
+          "title": "TC-QUEUE-02 รับเรื่องซ้อน (พร้อมกันและต่อกัน)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1504,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน 1 พร้อมกัน (UI)",
+                      "duration": 333
+                    },
+                    {
+                      "title": "ส่วน 2 พร้อมกัน (API)",
+                      "duration": 66
+                    },
+                    {
+                      "title": "ส่วน 3 ต่อกัน",
+                      "duration": 174
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:19.825Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-72a6f366cfaf84fd3f9e",
+          "file": "part-a.spec.ts",
+          "line": 970,
+          "column": 1
+        },
+        {
+          "title": "TC-QUEUE-03 งานในมือสูงสุด 10",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1441,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 งานในมือ 9",
+                      "duration": 12
+                    },
+                    {
+                      "title": "2 claim 000028 (ครั้งที่ 10)",
+                      "duration": 119
+                    },
+                    {
+                      "title": "3 claim 000029 (ครั้งที่ 11) ไม่สำเร็จ",
+                      "duration": 81
+                    },
+                    {
+                      "title": "4 อนุมัติ 000025 → งานในมือ 9",
+                      "duration": 101
+                    },
+                    {
+                      "title": "5 claim 000029 อีกครั้ง",
+                      "duration": 71
+                    },
+                    {
+                      "title": "6 off.reg1 claim 000030",
+                      "duration": 13
+                    },
+                    {
+                      "title": "7 RESET ตีกลับ 000025 → 8",
+                      "duration": 160
+                    },
+                    {
+                      "title": "8 claim 000028 และ 000029",
+                      "duration": 132
+                    },
+                    {
+                      "title": "9 สมหญิงส่งแก้ → 11",
+                      "duration": 178
+                    },
+                    {
+                      "title": "10 claim 000030 → WORKLOAD_LIMIT",
+                      "duration": 80
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:21.333Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-QUEUE-03-งานในมือสูงสุด-10-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-dceccd8cbffece7fd4ad",
+          "file": "part-a.spec.ts",
+          "line": 1037,
+          "column": 1
+        },
+        {
+          "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 815,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "แถว a",
+                      "duration": 93
+                    },
+                    {
+                      "title": "แถว b",
+                      "duration": 66
+                    },
+                    {
+                      "title": "แถว c",
+                      "duration": 65
+                    },
+                    {
+                      "title": "แถว d",
+                      "duration": 61
+                    },
+                    {
+                      "title": "แถว e",
+                      "duration": 65
+                    },
+                    {
+                      "title": "แถว f",
+                      "duration": 76
+                    },
+                    {
+                      "title": "แถว g",
+                      "duration": 70
+                    },
+                    {
+                      "title": "แถว h",
+                      "duration": 62
+                    },
+                    {
+                      "title": "แถว i",
+                      "duration": 63
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:22.778Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-SLA-01-กำหนดเสร็จตามตารางวันที่-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-061b468f92b87e85705a",
+          "file": "part-a.spec.ts",
+          "line": 1114,
+          "column": 1
+        },
+        {
+          "title": "TC-SLA-02 หยุดนับ SLA ระหว่างรอแก้ไข",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1019,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน 1 หยุดนับ 1 วันทำการ",
+                      "duration": 267
+                    },
+                    {
+                      "title": "ส่วน 2 seed 000017 ส่งแก้ 1 ธ.ค. 09:00",
+                      "duration": 116
+                    },
+                    {
+                      "title": "ส่วน 3 ส่งแก้ 4 ธ.ค. 10:00",
+                      "duration": 51
+                    },
+                    {
+                      "title": "ส่วน 4 ตีกลับและส่งแก้วันเดียวกัน",
+                      "duration": 75
+                    },
+                    {
+                      "title": "ส่วน 5 คร่อมสุดสัปดาห์/วันหยุด ส่งแก้หลัง 16:30",
+                      "duration": 87
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:23.597Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-SLA-02-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-de88fb02e83efa618bbe",
+          "file": "part-a.spec.ts",
+          "line": 1144,
+          "column": 1
+        },
+        {
+          "title": "TC-SLA-03 ระดับเตือน ปกติ/ใกล้/เกิน",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 975,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A คำขอใหม่",
+                      "duration": 305
+                    },
+                    {
+                      "title": "ส่วน B seed 000016",
+                      "duration": 150
+                    },
+                    {
+                      "title": "ส่วน C seed ที่ 09:00",
+                      "duration": 214
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:24.620Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-SLA-03-ระดับเตือน-ปกติ-ใกล้-เกิน-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-b4d0ff20c6d53291a451",
+          "file": "part-a.spec.ts",
+          "line": 1243,
+          "column": 1
+        },
+        {
+          "title": "TC-NOTI-01 ผู้รับแจ้งเตือนตามระดับ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 696,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-16T15:38:25.598Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-NOTI-01-ผู้รับแจ้งเตือนตามระดับ-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-377a004eed5899a62bef",
+          "file": "part-a.spec.ts",
+          "line": 1348,
+          "column": 1
+        },
+        {
+          "title": "TC-NOTI-02 ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1812,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A ไม่แจ้งซ้ำ",
+                      "duration": 753
+                    },
+                    {
+                      "title": "ส่วน B ข้ามระดับ (ส. 5 ธ.ค. 10:00)",
+                      "duration": 213
+                    },
+                    {
+                      "title": "ส่วน C ขั้นรออนุมัติและรอออกเอกสาร",
+                      "duration": 586
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:26.298Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-a-TC-NOTI-02-ไม่แจ้งซ-2f7c1-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "748a4591e2b873db0f4e-5ceddca1de2fb8667c6d",
+          "file": "part-a.spec.ts",
+          "line": 1352,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part-b.spec.ts",
+      "file": "part-b.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-WORKFLOW-01 SV-01 อนุมัติ + ออกเอกสาร",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 ตรวจปุ่ม",
+                      "duration": 29
+                    },
+                    {
+                      "title": "2 off.reg1 อนุมัติเรื่องของ off.reg2 ไม่ได้",
+                      "duration": 13
+                    },
+                    {
+                      "title": "3 อนุมัติ",
+                      "duration": 60
+                    },
+                    {
+                      "title": "4 ออกเอกสาร",
+                      "duration": 63
+                    },
+                    {
+                      "title": "5 สมหญิงดาวน์โหลด PDF",
+                      "duration": 143
+                    },
+                    {
+                      "title": "6 Dashboard",
+                      "duration": 19
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:28.170Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-01-SV-01-อนุมัติ-ออกเอกสาร-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-e44d76ba18ec35180fff",
+          "file": "part-b.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-02 SV-02 ผ่านหัวหน้า",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1936,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 ตรวจปุ่ม",
+                      "duration": 25
+                    },
+                    {
+                      "title": "2 ส่งต่อ",
+                      "duration": 159
+                    },
+                    {
+                      "title": "3 head1 รายการรออนุมัติ",
+                      "duration": 40
+                    },
+                    {
+                      "title": "4 เปิด 000013",
+                      "duration": 42
+                    },
+                    {
+                      "title": "5 หัวหน้าอนุมัติ",
+                      "duration": 58
+                    },
+                    {
+                      "title": "6 off.reg1 ออกเอกสารไม่ได้",
+                      "duration": 83
+                    },
+                    {
+                      "title": "7 off.reg2 ออกเอกสาร",
+                      "duration": 154
+                    },
+                    {
+                      "title": "8 seed 000019 (APPROVED โดย head1) ออกโดย off.reg1",
+                      "duration": 241
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:28.892Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-02-SV-02-ผ่านหัวหน้า-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-030c55e22a3924f54346",
+          "file": "part-b.spec.ts",
+          "line": 95,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-03 SV-03 สามขั้นตอน",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1638,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 ตรวจหน้า",
+                      "duration": 25
+                    },
+                    {
+                      "title": "2 ส่งต่อไปฝ่ายโยธา",
+                      "duration": 149
+                    },
+                    {
+                      "title": "3 คิว off.reg2 เหลือ 16 แถว",
+                      "duration": 3
+                    },
+                    {
+                      "title": "4 คิว off.works1",
+                      "duration": 49
+                    },
+                    {
+                      "title": "5 off.reg1 ข้ามแผนก claim ไม่ได้",
+                      "duration": 12
+                    },
+                    {
+                      "title": "6 off.works1 claim แล้วส่งต่อ",
+                      "duration": 185
+                    },
+                    {
+                      "title": "7 head1 อนุมัติ",
+                      "duration": 204
+                    },
+                    {
+                      "title": "8 ผู้ออกเอกสารคือ off.reg2 (ทะเบียนขั้นแรก)",
+                      "duration": 171
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:30.832Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-03-SV-03-สามขั้นตอน-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-ac97decb622e5f440822",
+          "file": "part-b.spec.ts",
+          "line": 161,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-04 ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8652,
+                  "error": {
+                    "message": "Error: A 5 return-btn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('return-btn')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - A 5 return-btn getByTestId('return-btn') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('return-btn')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                    "stack": "Error: A 5 return-btn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('return-btn')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - A 5 return-btn getByTestId('return-btn') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('return-btn')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts:252:67\n    at /Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts:232:3",
+                    "location": {
+                      "file": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts",
+                      "column": 67,
+                      "line": 252
+                    },
+                    "snippet": "  250 |     await caseStatus(sm, 'กำลังตรวจสอบ', 'A 4 case-status');\n  251 |     await openOfficerCase(off, 20);\n> 252 |     await expect(off.getByTestId('return-btn'), 'A 5 return-btn').toHaveCount(0);\n      |                                                                   ^\n  253 |     const r = await api(off, 'POST', `/api/officer/cases/${EG(20)}/return`, { reason: 'xxxxxxxxxx' });\n  254 |     expect(r.status, 'A 5 return ครั้งที่ 3').toBe(409);\n  255 |     expect(r.json?.code, 'A 5 code').toBe('RETURN_LIMIT');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts",
+                        "column": 67,
+                        "line": 252
+                      },
+                      "message": "Error: A 5 return-btn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('return-btn')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - A 5 return-btn getByTestId('return-btn') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('return-btn')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n  250 |     await caseStatus(sm, 'กำลังตรวจสอบ', 'A 4 case-status');\n  251 |     await openOfficerCase(off, 20);\n> 252 |     await expect(off.getByTestId('return-btn'), 'A 5 return-btn').toHaveCount(0);\n      |                                                                   ^\n  253 |     const r = await api(off, 'POST', `/api/officer/cases/${EG(20)}/return`, { reason: 'xxxxxxxxxx' });\n  254 |     expect(r.status, 'A 5 return ครั้งที่ 3').toBe(409);\n  255 |     expect(r.json?.code, 'A 5 code').toBe('RETURN_LIMIT');\n    at /Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts:252:67\n    at /Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts:232:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A SV-01 000020: ตีกลับ 2 ครั้ง ครั้งที่ 3 ไม่ได้",
+                      "duration": 7482,
+                      "error": {
+                        "message": "Error: A 5 return-btn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('return-btn')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - A 5 return-btn getByTestId('return-btn') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('return-btn')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                        "stack": "Error: A 5 return-btn\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('return-btn')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  7000ms\n\nCall log:\n\u001b[2m  - A 5 return-btn getByTestId('return-btn') with timeout 7000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('return-btn')\u001b[22m\n\u001b[2m    18 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts:252:67\n    at /Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts:232:3",
+                        "location": {
+                          "file": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts",
+                          "column": 67,
+                          "line": 252
+                        },
+                        "snippet": "  250 |     await caseStatus(sm, 'กำลังตรวจสอบ', 'A 4 case-status');\n  251 |     await openOfficerCase(off, 20);\n> 252 |     await expect(off.getByTestId('return-btn'), 'A 5 return-btn').toHaveCount(0);\n      |                                                                   ^\n  253 |     const r = await api(off, 'POST', `/api/officer/cases/${EG(20)}/return`, { reason: 'xxxxxxxxxx' });\n  254 |     expect(r.status, 'A 5 return ครั้งที่ 3').toBe(409);\n  255 |     expect(r.json?.code, 'A 5 code').toBe('RETURN_LIMIT');"
+                      }
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:32.473Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-04-ตีกลับสูงสุด-2-ครั้ง-และผลหลังครบ-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-04-ตีกลับสูงสุด-2-ครั้ง-และผลหลังครบ-chromium/test-failed-2.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-04-ตีกลับสูงสุด-2-ครั้ง-และผลหลังครบ-chromium/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-04-ตีกลับสูงสุด-2-ครั้ง-และผลหลังครบ-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/tests/e2e/part-b.spec.ts",
+                    "column": 67,
+                    "line": 252
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-462b32588b2bfaa0b7e6",
+          "file": "part-b.spec.ts",
+          "line": 230,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-05 เหตุผล ≥ 10 ตัวอักษร (ตีกลับ/ไม่อนุมัติ)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1714,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A ตีกลับ 000020",
+                      "duration": 321
+                    },
+                    {
+                      "title": "ส่วน B ไม่อนุมัติ SV-01 000026",
+                      "duration": 346
+                    },
+                    {
+                      "title": "ส่วน C หัวหน้าไม่อนุมัติ 000011",
+                      "duration": 249
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:41.384Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-05-เหตุ-00aa1-ตัวอักษร-ตีกลับ-ไม่อนุมัติ--chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-a58e5855a7059bbd9d6b",
+          "file": "part-b.spec.ts",
+          "line": 311,
+          "column": 1
+        },
+        {
+          "title": "TC-WORKFLOW-06 เวลาแก้ไข 168 ชั่วโมง",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 717,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "หน้าตั้งต้น",
+                      "duration": 24
+                    },
+                    {
+                      "title": "รอบ A 167:59",
+                      "duration": 148
+                    },
+                    {
+                      "title": "รอบ B 168:00",
+                      "duration": 96
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:43.190Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-WORKFLOW-06-เวลาแก้ไข-168-ชั่วโมง-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-2b03d660cc22ee26b15f",
+          "file": "part-b.spec.ts",
+          "line": 366,
+          "column": 1
+        },
+        {
+          "title": "TC-DOC-01 ออกเอกสารและข้อมูลใน PDF",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 487,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-16T15:38:43.910Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-336cfdbbc7e7595159c3",
+          "file": "part-b.spec.ts",
+          "line": 407,
+          "column": 1
+        },
+        {
+          "title": "TC-DOC-02 ตรวจเอกสาร /verify",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 218,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "K7M2Q9XA",
+                      "duration": 37
+                    },
+                    {
+                      "title": "ZZZZZZZZ",
+                      "duration": 18
+                    },
+                    {
+                      "title": "API",
+                      "duration": 10
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:44.400Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-3c14150eaca5f4e6f7ac",
+          "file": "part-b.spec.ts",
+          "line": 461,
+          "column": 1
+        },
+        {
+          "title": "TC-DOC-03 เอกสารหมดอายุและลายเซ็นไม่ตรง",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3698,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A SV-01 90 วัน",
+                      "duration": 148
+                    },
+                    {
+                      "title": "ส่วน B SV-02 1 ปี",
+                      "duration": 140
+                    },
+                    {
+                      "title": "ส่วน C seed K7M2Q9XA",
+                      "duration": 134
+                    },
+                    {
+                      "title": "ส่วน D ลายเซ็นไม่ตรง",
+                      "duration": 139
+                    },
+                    {
+                      "title": "ส่วน E ออกเอกสาร 29 ก.พ. 2571",
+                      "duration": 437
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:44.622Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-7020520df20b93874642",
+          "file": "part-b.spec.ts",
+          "line": 502,
+          "column": 1
+        },
+        {
+          "title": "TC-PDPA-01 ปิดบังเลขบัตรบนจอ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 851,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "off.reg2 คิว",
+                      "duration": 56
+                    },
+                    {
+                      "title": "off.reg2 หน้าคำขอ",
+                      "duration": 18
+                    },
+                    {
+                      "title": "head1",
+                      "duration": 63
+                    },
+                    {
+                      "title": "ประชาชนเห็นของตัวเองเต็ม",
+                      "duration": 137
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:48.323Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-PDPA-01-ปิดบังเลขบัตรบนจอ-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-b352c4d240fd6d4ba526",
+          "file": "part-b.spec.ts",
+          "line": 585,
+          "column": 1
+        },
+        {
+          "title": "TC-PDPA-02 API (JSON) ไม่ส่งเลขบัตรเต็ม",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 72,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-16T15:38:49.177Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-d35852a935af92cbf42a",
+          "file": "part-b.spec.ts",
+          "line": 618,
+          "column": 1
+        },
+        {
+          "title": "TC-PDPA-03 แสดงเลขเต็มต้องมีเหตุผลและ Audit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 701,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 เหตุผลว่าง",
+                      "duration": 122
+                    },
+                    {
+                      "title": "2 เว้นวรรคล้วน",
+                      "duration": 31
+                    },
+                    {
+                      "title": "3 เหตุผลถูกต้อง",
+                      "duration": 56
+                    },
+                    {
+                      "title": "4 โหลดหน้าซ้ำ",
+                      "duration": 20
+                    },
+                    {
+                      "title": "5 Audit UNMASK",
+                      "duration": 133
+                    },
+                    {
+                      "title": "6 บทบาทอื่น unmask ไม่ได้",
+                      "duration": 38
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:49.253Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-PDPA-03-แสดงเลขเต็มต้องมีเหตุผลและ-Audit-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-5114f510cbab1790d1fc",
+          "file": "part-b.spec.ts",
+          "line": 647,
+          "column": 1
+        },
+        {
+          "title": "TC-DASH-01 Dashboard ตัวเลขเริ่มต้น",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 309,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ค่าเริ่มต้นบนจอ",
+                      "duration": 19
+                    },
+                    {
+                      "title": "ค่าเริ่มต้นจาก API",
+                      "duration": 6
+                    },
+                    {
+                      "title": "ไม่มีข้อมูลส่วนบุคคล",
+                      "duration": 2
+                    },
+                    {
+                      "title": "ตัวกรองบริการ",
+                      "duration": 78
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:49.958Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-DASH-01-Dashboard-ตัวเลขเริ่มต้น-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-fcd85ab45e2026b6202f",
+          "file": "part-b.spec.ts",
+          "line": 705,
+          "column": 1
+        },
+        {
+          "title": "TC-DASH-02 Dashboard ย้อนหลัง พ.ย. ต.ค. รายปี",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 491,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "2026-10 ALL",
+                      "duration": 39
+                    },
+                    {
+                      "title": "2026-11 ALL",
+                      "duration": 33
+                    },
+                    {
+                      "title": "2026-11 SV-01",
+                      "duration": 28
+                    },
+                    {
+                      "title": "2026-11 SV-02",
+                      "duration": 27
+                    },
+                    {
+                      "title": "2026-11 SV-03",
+                      "duration": 27
+                    },
+                    {
+                      "title": "2026 ALL",
+                      "duration": 26
+                    },
+                    {
+                      "title": "2026 SV-01",
+                      "duration": 26
+                    },
+                    {
+                      "title": "2026 SV-02",
+                      "duration": 26
+                    },
+                    {
+                      "title": "2026 SV-03",
+                      "duration": 25
+                    },
+                    {
+                      "title": "เลือกผ่าน select",
+                      "duration": 55
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:50.270Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-DASH-02-Dashboard-ย้อนหลัง-พ-ย-ต-ค-รายปี-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-d7a7b4cc1e9f4264e742",
+          "file": "part-b.spec.ts",
+          "line": 760,
+          "column": 1
+        },
+        {
+          "title": "TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ และไม่มีข้อมูลส่วนบุคคล",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 637,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "xlsx พ.ย.",
+                      "duration": 329
+                    },
+                    {
+                      "title": "pdf พ.ย.",
+                      "duration": 24
+                    },
+                    {
+                      "title": "xlsx ธ.ค.",
+                      "duration": 72
+                    },
+                    {
+                      "title": "Audit EXPORT = 3",
+                      "duration": 16
+                    },
+                    {
+                      "title": "pdf พ.ย. Content-Type (ตรวจหลัง Audit)",
+                      "duration": 4
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:50.764Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-DASH-03-ส่งออก-E-4cf5a-าจอ-และไม่มีข้อมูลส่วนบุคคล-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-9d88aa1c5e6fac359b8c",
+          "file": "part-b.spec.ts",
+          "line": 805,
+          "column": 1
+        },
+        {
+          "title": "TC-DASH-04 ค่าขอบ \"ทันกำหนด\" 16:29:59 / 16:30:00 / 16:30:01",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 725,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 อนุมัติที่ 16:00:00",
+                      "duration": 13
+                    },
+                    {
+                      "title": "2 issue ที่ 16:29:59",
+                      "duration": 72
+                    },
+                    {
+                      "title": "3 reject ที่ 16:30:00",
+                      "duration": 54
+                    },
+                    {
+                      "title": "4 issue ที่ 16:30:01",
+                      "duration": 69
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:51.404Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-DASH-04-ค่าขอบ-ทันกำหนด-16-29-59-16-30-00-16-30-01-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-35ae974acae883d0f0fb",
+          "file": "part-b.spec.ts",
+          "line": 881,
+          "column": 1
+        },
+        {
+          "title": "TC-AUDIT-01 เหตุการณ์และฟิลด์ใน Audit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 722,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ทำรายการ",
+                      "duration": 67
+                    },
+                    {
+                      "title": "ไม่กรอง 16 แถว",
+                      "duration": 107
+                    },
+                    {
+                      "title": "กรอง",
+                      "duration": 260
+                    },
+                    {
+                      "title": "CSV",
+                      "duration": 73
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:52.133Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-AUDIT-01-เหตุการณ์และฟิลด์ใน-Audit-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-333638779cf9c6a1fa53",
+          "file": "part-b.spec.ts",
+          "line": 937,
+          "column": 1
+        },
+        {
+          "title": "TC-AUDIT-02 Audit แก้/ลบไม่ได้ (405)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 278,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ในชื่อ admin1",
+                      "duration": 13
+                    },
+                    {
+                      "title": "ในชื่อ audit1",
+                      "duration": 13
+                    },
+                    {
+                      "title": "ข้อมูลเดิมไม่ถูกแก้หรือหาย",
+                      "duration": 3
+                    },
+                    {
+                      "title": "UI และ admin อ่านไม่ได้",
+                      "duration": 41
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:52.858Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-AUDIT-02-Audit-แก้-ลบไม่ได้-405--chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-85db13429aa79e2465d4",
+          "file": "part-b.spec.ts",
+          "line": 1043,
+          "column": 1
+        },
+        {
+          "title": "TC-AUDIT-03 กรองช่วงวันที่ตามเวลาไทย",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 928,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "from=2026-12-01 to=2026-12-01 actor=-",
+                      "duration": 120
+                    },
+                    {
+                      "title": "from=2026-11-30 to=2026-11-30 actor=-",
+                      "duration": 89
+                    },
+                    {
+                      "title": "from=2026-11-30 to=2026-12-01 actor=-",
+                      "duration": 91
+                    },
+                    {
+                      "title": "from=2026-12-02 to=- actor=-",
+                      "duration": 92
+                    },
+                    {
+                      "title": "from=- to=2026-11-30 actor=-",
+                      "duration": 92
+                    },
+                    {
+                      "title": "from=2026-12-01 to=2026-12-02 actor=-",
+                      "duration": 92
+                    },
+                    {
+                      "title": "from=2026-12-01 to=2026-12-01 actor=off.reg2",
+                      "duration": 110
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:53.140Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-AUDIT-03-กรองช่วงวันที่ตามเวลาไทย-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-570b006462eb560006a4",
+          "file": "part-b.spec.ts",
+          "line": 1085,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-01 ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 293,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "UI ของสมชาย",
+                      "duration": 30
+                    },
+                    {
+                      "title": "API",
+                      "duration": 15
+                    },
+                    {
+                      "title": "ของตัวเอง",
+                      "duration": 32
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:54.072Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-RBAC-01-ประชาชนเปิดคำขอคนอื่นไม่ได้-IDOR--chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-a3e60e50b0a9e6a87046",
+          "file": "part-b.spec.ts",
+          "line": 1135,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-02 เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (API)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 332,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1–3 off.reg2 ใช้ API",
+                      "duration": 18
+                    },
+                    {
+                      "title": "4 UI",
+                      "duration": 50
+                    },
+                    {
+                      "title": "5–6 head1",
+                      "duration": 7
+                    },
+                    {
+                      "title": "7 Audit APPROVE",
+                      "duration": 8
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:54.369Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-RBAC-02-เจ้าหน้าที่อนุมัติ-SV-02-ไม่ได้-API--chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-51078dff247d9a3dfb0b",
+          "file": "part-b.spec.ts",
+          "line": 1167,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-03 ตารางสิทธิ์หน้า/API ตามบทบาท",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2619,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "บทบาท anon",
+                      "duration": 156
+                    },
+                    {
+                      "title": "บทบาท citizen",
+                      "duration": 263
+                    },
+                    {
+                      "title": "บทบาท officer",
+                      "duration": 270
+                    },
+                    {
+                      "title": "บทบาท head",
+                      "duration": 260
+                    },
+                    {
+                      "title": "บทบาท executive",
+                      "duration": 297
+                    },
+                    {
+                      "title": "บทบาท auditor",
+                      "duration": 317
+                    },
+                    {
+                      "title": "บทบาท admin",
+                      "duration": 286
+                    },
+                    {
+                      "title": "ส่วน C ขอบเขตแผนก",
+                      "duration": 198
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:54.705Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-RBAC-03-ตารางสิทธิ์หน้า-API-ตามบทบาท-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-ef6dafe4d1c41972d487",
+          "file": "part-b.spec.ts",
+          "line": 1205,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-04 ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1770,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1 วันหยุดเริ่มต้น",
+                      "duration": 62
+                    },
+                    {
+                      "title": "2 NEW_PAID ก่อนแก้",
+                      "duration": 54
+                    },
+                    {
+                      "title": "3 แก้ค่าธรรมเนียม",
+                      "duration": 268
+                    },
+                    {
+                      "title": "4 ร่างใหม่ใช้ราคาใหม่",
+                      "duration": 157
+                    },
+                    {
+                      "title": "5 ยอดที่ล็อกของ PP-0001",
+                      "duration": 36
+                    },
+                    {
+                      "title": "6 เพิ่มวันหยุด",
+                      "duration": 115
+                    },
+                    {
+                      "title": "7 NEW_PAID หลังเพิ่มวันหยุด",
+                      "duration": 70
+                    },
+                    {
+                      "title": "8 เปลี่ยนบทบาท exec1 → auditor",
+                      "duration": 13
+                    },
+                    {
+                      "title": "9 Audit ADMIN_CHANGE",
+                      "duration": 133
+                    },
+                    {
+                      "title": "10 admin สร้างคำขอไม่ได้",
+                      "duration": 6
+                    },
+                    {
+                      "title": "11 ลบวันหยุด",
+                      "duration": 195
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:57.329Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-RBAC-04-ผู้ดูแลร-6afb2-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-f46a11fd7751cde8237f",
+          "file": "part-b.spec.ts",
+          "line": 1293,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-05 สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 914,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "เจ้าหน้าที่",
+                      "duration": 56
+                    },
+                    {
+                      "title": "head1",
+                      "duration": 26
+                    },
+                    {
+                      "title": "ประชาชน",
+                      "duration": 11
+                    },
+                    {
+                      "title": "บทบาทอื่นและไม่ล็อกอิน",
+                      "duration": 20
+                    },
+                    {
+                      "title": "fileId ที่ไม่มี",
+                      "duration": 2
+                    },
+                    {
+                      "title": "UI",
+                      "duration": 242
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:38:59.104Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-14bd525fff58ff9b0b36",
+          "file": "part-b.spec.ts",
+          "line": 1395,
+          "column": 1
+        },
+        {
+          "title": "TC-RBAC-06 ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1062,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "fee -1",
+                      "duration": 159
+                    },
+                    {
+                      "title": "fee 0",
+                      "duration": 86
+                    },
+                    {
+                      "title": "fee 100000",
+                      "duration": 82
+                    },
+                    {
+                      "title": "fee 100001",
+                      "duration": 79
+                    },
+                    {
+                      "title": "sla 0",
+                      "duration": 78
+                    },
+                    {
+                      "title": "sla 1",
+                      "duration": 82
+                    },
+                    {
+                      "title": "sla 60",
+                      "duration": 84
+                    },
+                    {
+                      "title": "sla 61",
+                      "duration": 80
+                    },
+                    {
+                      "title": "วันหยุดซ้ำ / วันเสาร์",
+                      "duration": 105
+                    },
+                    {
+                      "title": "แก้บทบาทตัวเองไม่ได้",
+                      "duration": 6
+                    },
+                    {
+                      "title": "Audit ADMIN_CHANGE = 5",
+                      "duration": 7
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:39:00.022Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-RBAC-06-ผู้ดูแลระบบ-ช่วงค่าที่ยอมรับ-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-80bb1084fc062fd5d6eb",
+          "file": "part-b.spec.ts",
+          "line": 1475,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-01 Responsive 375/768/1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3325,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "viewport 375×812",
+                      "duration": 338
+                    },
+                    {
+                      "title": "viewport 768×1024",
+                      "duration": 228
+                    },
+                    {
+                      "title": "viewport 1280×800",
+                      "duration": 233
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px",
+                      "duration": 446
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:39:01.088Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-NFR-01-Responsive-375-768-1280-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-a992e911cb8b534cfe5e",
+          "file": "part-b.spec.ts",
+          "line": 1567,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-02 WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11698,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A axe",
+                      "duration": 5085
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว",
+                      "duration": 222
+                    },
+                    {
+                      "title": "ส่วน C label",
+                      "duration": 249
+                    },
+                    {
+                      "title": "ส่วน D สถานะไม่ใช้สีอย่างเดียว",
+                      "duration": 534
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:39:04.417Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/supitchak/CWN-teaching2026/egov-work/week2/egov-eservice/app/test-results/part-b-TC-NFR-02-WCAG-axe--cef8c-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-c2587642d905936050dd",
+          "file": "part-b.spec.ts",
+          "line": 1616,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-03 Health เวลาโหลด และผลซ้ำได้",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [
+                {
+                  "type": "skip-part",
+                  "description": "ไม่มี BASE_URL_NO_TEST จึงข้ามส่วนปิด hook"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2010,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "health",
+                      "duration": 9
+                    },
+                    {
+                      "title": "เวลาโหลด ≤ 3,000 ms (รอบที่ 2)",
+                      "duration": 477
+                    },
+                    {
+                      "title": "ผลซ้ำได้",
+                      "duration": 113
+                    },
+                    {
+                      "title": "นาฬิกาไม่มี offset",
+                      "duration": 2
+                    },
+                    {
+                      "title": "ปิด hook",
+                      "duration": 0
+                    }
+                  ],
+                  "startTime": "2026-11-16T15:39:16.119Z",
+                  "annotations": [
+                    {
+                      "type": "skip-part",
+                      "description": "ไม่มี BASE_URL_NO_TEST จึงข้ามส่วนปิด hook"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-6f2495d9a6bd2e86659e",
+          "file": "part-b.spec.ts",
+          "line": 1728,
+          "column": 1
+        },
+        {
+          "title": "TC-NFR-04 เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [
+                {
+                  "type": "encryption",
+                  "description": "AES-256-GCM"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 59,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-16T15:39:18.132Z",
+                  "annotations": [
+                    {
+                      "type": "encryption",
+                      "description": "AES-256-GCM"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "310b463fa2e2c7575152-601b0e8076873038f88b",
+          "file": "part-b.spec.ts",
+          "line": 1791,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-16T15:38:06.923Z",
+    "duration": 71297.43800000001,
+    "expected": 50,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

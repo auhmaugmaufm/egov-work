@@ -1,0 +1,21 @@
+'use strict';
+module.exports = {
+  STATUS_TH: { DRAFT: 'ร่าง', PENDING_PAYMENT: 'รอชำระเงิน', SUBMITTED: 'ส่งคำขอแล้ว', IN_REVIEW: 'กำลังตรวจสอบ',
+    NEED_FIX: 'รอแก้ไขเอกสาร', PENDING_APPROVAL: 'รออนุมัติ', APPROVED: 'อนุมัติ', COMPLETED: 'เสร็จสิ้น',
+    REJECTED: 'ไม่อนุมัติ', CANCELLED: 'ยกเลิก' },
+  LEVEL_TH: { normal: 'ปกติ', near: 'ใกล้ครบกำหนด', overdue: 'เกินกำหนด', paused: 'หยุดนับ', closed: 'ปิดแล้ว' },
+  ROLE_TH: { citizen: 'ประชาชน', officer: 'เจ้าหน้าที่', head: 'หัวหน้าฝ่าย', executive: 'ผู้บริหาร',
+    auditor: 'ผู้ตรวจสอบภายใน', admin: 'ผู้ดูแลระบบ' },
+  DEPT_TH: { registry: 'ฝ่ายทะเบียน', works: 'ฝ่ายโยธา' },
+  SERVICE_NAME: { 'SV-01': 'ขอหนังสือรับรอง', 'SV-02': 'ขออนุญาตประกอบกิจการ', 'SV-03': 'ขออนุญาตก่อสร้าง/ต่อเติมอาคาร' },
+  SERVICE_DOCS: { 'SV-01': ['id-card'], 'SV-02': ['id-card', 'map', 'site-photo'], 'SV-03': ['id-card', 'plan', 'deed'] },
+  REQUIRED_DOCS: { 'SV-01': ['id-card'], 'SV-02': ['id-card', 'map'], 'SV-03': ['id-card', 'plan', 'deed'] },
+  DOC_KEY_TH: { 'id-card': 'บัตรประชาชน', map: 'แผนที่ตั้ง', 'site-photo': 'ภาพสถานที่', plan: 'แบบแปลน', deed: 'โฉนด', extra: 'เอกสารเพิ่มเติม' },
+  BACKLOG_STATUSES: ['SUBMITTED', 'IN_REVIEW', 'NEED_FIX', 'PENDING_APPROVAL', 'APPROVED'],
+  CLOSED_STATUSES: ['COMPLETED', 'REJECTED'],
+  FINAL_STATUSES: ['COMPLETED', 'REJECTED', 'CANCELLED'],
+  AUDIT_EVENTS: ['STAFF_LOGIN', 'CLAIM', 'RETURN', 'FORWARD', 'APPROVE', 'REJECT', 'ISSUE', 'UNMASK', 'EXPORT', 'ADMIN_CHANGE'],
+  MONTH_TH: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'],
+  DEFAULT_CLOCK: '2026-12-01T09:00:00+07:00',
+  OTP_CODE: '123456',
+};

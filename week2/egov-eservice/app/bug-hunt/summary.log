@@ -1,0 +1,83 @@
+=== B01 22:20:33
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B01
+  1 failed
+  50 passed (1.1m)
+  FAIL: TC-FEE-01 ค่าธรรมเนียม SV-01/SV-02/SV-03
+=== B02 22:21:42
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B02
+  1 failed
+  50 passed (1.4m)
+  FAIL: TC-UPLOAD-01 ขนาดและจำนวนไฟล์
+=== B03 22:23:08
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B03
+  46 passed (1.7m)
+  FAIL: TC-NOTI-02 ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร
+  FAIL: TC-RBAC-04 ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก
+  FAIL: TC-SLA-01 กำหนดเสร็จตามตารางวันที่
+  FAIL: TC-SLA-02 หยุดนับ SLA ระหว่างรอแก้ไข
+  FAIL: TC-SLA-03 ระดับเตือน ปกติ/ใกล้/เกิน
+=== B04 22:24:57
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B04
+  1 failed
+  50 passed (1.7m)
+  FAIL: TC-SLA-02 หยุดนับ SLA ระหว่างรอแก้ไข
+=== B05 22:26:42
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B05
+  1 failed
+  50 passed (1.4m)
+  FAIL: TC-PAY-01 อายุ QR 15:00
+=== B06 22:28:11
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B06
+  1 failed
+  50 passed (1.9m)
+  FAIL: TC-RBAC-01 ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR)
+=== B07 22:30:09
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B07
+  1 failed
+  50 passed (1.3m)
+  FAIL: TC-RBAC-02 เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (API)
+=== B08 22:31:33
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B08
+  1 failed
+  50 passed (1.3m)
+  FAIL: TC-QUEUE-02 รับเรื่องซ้อน (พร้อมกันและต่อกัน)
+=== B09 22:32:57
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B09
+  1 failed
+  50 passed (1.2m)
+  FAIL: TC-PDPA-02 API (JSON) ไม่ส่งเลขบัตรเต็ม ─────────
+=== B10 22:34:13
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B10
+  48 passed (1.7m)
+  FAIL: TC-DASH-01 Dashboard ตัวเลขเริ่มต้น
+  FAIL: TC-DASH-02 Dashboard ย้อนหลัง พ.ย. ต.ค. รายปี
+  FAIL: TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ และไม่มีข้อมูลส่วนบุคคล
+=== B11 22:35:58
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B11
+  49 passed (2.0m)
+  FAIL: TC-AUDIT-01 เหตุการณ์และฟิลด์ใน Audit
+  FAIL: TC-PDPA-03 แสดงเลขเต็มต้องมีเหตุผลและ Audit
+=== B12 22:38:02
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B12
+  1 failed
+  50 passed (1.2m)
+  FAIL: TC-WORKFLOW-04 ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ
+=== B03,B07 22:39:18
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B03,B07
+  45 passed (1.4m)
+  FAIL: TC-NOTI-02 ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร
+  FAIL: TC-RBAC-02 เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (API)
+  FAIL: TC-RBAC-04 ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก
+  FAIL: TC-SLA-01 กำหนดเสร็จตามตารางวันที่
+  FAIL: TC-SLA-02 หยุดนับ SLA ระหว่างรอแก้ไข
+  FAIL: TC-SLA-03 ระดับเตือน ปกติ/ใกล้/เกิน
+=== B01,B05,B09 22:40:45
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: B01,B05,B09
+  48 passed (1.3m)
+  FAIL: TC-FEE-01 ค่าธรรมเนียม SV-01/SV-02/SV-03
+  FAIL: TC-PAY-01 อายุ QR 15:00
+  FAIL: TC-PDPA-02 API (JSON) ไม่ส่งเลขบัตรเต็ม ─────────
+=== none 22:42:06
+web-1  | listening on :3000 TEST_MODE=1 BUG_MODE active: (none)
+  51 passed (1.2m)
+=== DONE 22:43:24

@@ -1,0 +1,166 @@
+{
+ "name": "egov-eservice",
+ "goal": "เว็บ e-Service กลาง เทศบาลนครตัวอย่าง (สมมติ) ตามชุดโจทย์ /workspace/egov-brief · Node.js 20 + Express + SQLite รันด้วย docker compose คำสั่งเดียว · รองรับ TEST_MODE=1 และ BUG_MODE ตาม BUGS.md · มี Playwright ครบ 51 TC · ทุกบล็อกทำตามสเปกใน /workspace/plans/egov-eservice/app/SPEC/ ที่สถาปนิกเขียนไว้แล้ว ห้ามออกแบบใหม่ ถ้าสเปกไม่ชัดให้เพิ่มหัวข้อใน SPEC/QUESTIONS-<บล็อก>.md แล้วทำส่วนที่ชัดต่อ · **วิธีตรวจในเครื่องนี้ (ใช้แทนคำสั่ง docker compose/พอร์ต 3000 ในตารางตรวจของสเปก):** image `egov-app:dev` build ไว้แล้ว (มี node_modules ครบ ห้ามเพิ่ม dependency) · รันตัวตรวจของบล็อกตัวเอง: `docker run --rm -d --name chk-<บล็อก> -e TEST_MODE=1 -e DB_PATH=/tmp/app.db -p <พอร์ต>:3000 -v $PWD/src:/app/src -v $PWD/tests:/app/tests egov-app:dev` (พอร์ต = 31 ตามด้วยเลขบล็อก เช่น B05 → 3105) แล้ว curl http://localhost:<พอร์ต> · แก้โค้ดแล้ว `docker restart chk-<บล็อก>` · จบแล้ว `docker rm -f chk-<บล็อก>` · unit test: `docker run --rm -v $PWD/src:/app/src -v $PWD/tests:/app/tests egov-app:dev node --test tests/unit/<ไฟล์>` · ห้าม docker compose down/up และห้ามแตะ container ของบล็อกอื่น (บล็อกอื่นรันขนานอยู่) · ถ้าต้อง build image ใหม่ใช้ `DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0` (BuildKit ล้มด้วย rosetta error) · B01 (โครง + src/core/*) เสร็จแล้ว ห้ามแก้ src/core ยกเว้นบล็อกเจ้าของ",
+ "blocks": [
+  {
+   "id": "B02",
+   "title": "ไลบรารีกฎตัวเลข: วันทำการ/SLA · ค่าธรรมเนียม · checksum บัตร · ปิดบังเลข · เลขคำขอ · รูปแบบวันที่/เงิน",
+   "size": "S",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/core/rules.js",
+   "detail": "อ่านเฉพาะ SPEC/B02.md · เขียน src/core/rules.js + tests/unit/rules.test.js ครอบค่าขอบทุกแถวในสเปก · ฝังจุด BUG_MODE B01 B03 B04 ตามสเปก",
+   "done": "node --test tests/unit/rules.test.js ผ่านทุกข้อ (ค่าขอบตรงสเปก)",
+   "exclusive": false,
+   "timeout": 1500
+  },
+  {
+   "id": "B03",
+   "title": "Seed ข้อมูลตาม TEST-DATA (บัญชี บริการ วันหยุด 30+2 คำขอ เอกสาร ชำระเงิน คิว)",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 1,
+   "output": "src/seed.js",
+   "detail": "อ่าน SPEC/B03.md และ /workspace/egov-brief/TEST-DATA.md (ค่าตายตัว ลอกตรงตัว) · reset เรียก seed.js",
+   "done": "หลัง reset นับแถวได้ตรงสเปก (คำขอ 32 · บัญชีตาม TEST-DATA ข้อ 1) และสคริปต์ตรวจ tests/unit/seed.test.js ผ่าน",
+   "exclusive": false,
+   "timeout": 2400
+  },
+  {
+   "id": "B04",
+   "title": "ยืนยันตัวตน ThaiD จำลอง + OTP lock + ลงทะเบียน + SSO เจ้าหน้าที่ + RBAC หน้า/API",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/auth/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B04.md · เขียนเฉพาะ src/modules/auth/",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B04.md ผ่านด้วย curl (status + ข้อความ error ตรงตัว)",
+   "exclusive": false,
+   "timeout": 2400
+  },
+  {
+   "id": "B05",
+   "title": "แคตตาล็อก + คำนวณค่าธรรมเนียม + ยื่นคำขอ/ร่าง/ยกเลิก + อัปโหลด (magic bytes · 5 MB · 5 ไฟล์)",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/cases/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B05.md · เขียนเฉพาะ src/modules/cases/ · ฝัง BUG_MODE B02 B06 ตามสเปก",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B05.md ผ่านด้วย curl",
+   "exclusive": false,
+   "timeout": 2400
+  },
+  {
+   "id": "B06",
+   "title": "ชำระเงิน PromptPay QR จำลอง (อายุ <15:00 · ยอดพอดี · idempotent · เลข EG/RC ข้ามปี · ไม่ซ้ำเมื่อพร้อมกัน)",
+   "size": "S",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/payment/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B06.md · เขียนเฉพาะ src/modules/payment/ · ฝัง BUG_MODE B05",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B06.md ผ่านด้วย curl",
+   "exclusive": false,
+   "timeout": 1500
+  },
+  {
+   "id": "B07",
+   "title": "Workflow + routing + คิว/รับเรื่อง (409) + ตีกลับ ≤2 + อนุมัติ/ไม่อนุมัติ + เวลาแก้ไข 168 ชม. + แจ้งเตือน SLA",
+   "size": "L",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/workflow/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B07.md · เขียนเฉพาะ src/modules/workflow/ · ฝัง BUG_MODE B07 B08 B12 · ใช้ฟังก์ชัน SLA จาก src/core/rules.js เท่านั้น",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B07.md ผ่านด้วย curl",
+   "exclusive": false,
+   "timeout": 3600
+  },
+  {
+   "id": "B08",
+   "title": "ออกเอกสาร HMAC-SHA256 + /verify + PDPA ปิดบัง/แสดงเลขเต็ม + หน้า Audit Trail (อ่านอย่างเดียว · 405)",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/docs/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B08.md · เขียนเฉพาะ src/modules/docs/ · ฝัง BUG_MODE B09 B11",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B08.md ผ่านด้วย curl",
+   "exclusive": false,
+   "timeout": 2400
+  },
+  {
+   "id": "B09",
+   "title": "Dashboard ผู้บริหาร + ส่งออก Excel/PDF",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/dashboard/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B09.md · เขียนเฉพาะ src/modules/dashboard/ · ฝัง BUG_MODE B10 · ตัวเลขต้องตรง TEST-DATA ข้อ 7 ที่ลอกไว้ในสเปก",
+   "done": "หลัง reset ตัวเลขทุก KPI ตรงตารางใน SPEC/B09.md (curl ดู data-testid)",
+   "exclusive": false,
+   "timeout": 2400
+  },
+  {
+   "id": "B10",
+   "title": "ผู้ดูแลระบบ: บริการ (ค่าธรรมเนียม SLA) · วันหยุด · ผู้ใช้/บทบาท · ช่วงค่าที่ยอมรับ",
+   "size": "S",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 1,
+   "output": "src/modules/admin/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B10.md · เขียนเฉพาะ src/modules/admin/",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B10.md ผ่านด้วย curl",
+   "exclusive": false,
+   "timeout": 1500
+  },
+  {
+   "id": "Z1",
+   "title": "รวมระบบ + รัน Playwright 51 TC จนผ่าน + รัน BUG_MODE B01–B12 ทีละตัว",
+   "size": "L",
+   "depends_on": [
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "INTEGRATION.md",
+   "detail": "docker compose up · รันชุดเต็มด้วย TEST_MODE=1 · TC ที่ล้มให้จำแนก เว็บผิด/test ผิด/โจทย์ผิด อ้างกฎ · แก้เว็บหรือ test ให้ตรงการ์ด ห้ามแก้ค่าคาดหวังให้ตรงจอ · โจทย์ผิดให้จดคำถาม · จากนั้นรัน BUG_MODE ทีละตัวและบันทึกตาราง triage ตาม BUGS.md ข้อ 4 · ชุด Playwright อยู่แล้วที่ tests/e2e/part-a.spec.ts และ part-b.spec.ts (เขียนในรอบก่อน) · Z1 เป็นบล็อกเดียวที่ใช้ docker compose (`DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0 TEST_MODE=1 docker compose up -d --build`) · ตรวจตารางตรวจของ SPEC/B01.md ด้วย (B01 หมดเวลาในรอบ 1 แต่ health/reset ผ่าน)",
+   "done": "INTEGRATION.md มีผล 51 TC (passed/failed) และตาราง BUG_MODE 12 แถว",
+   "exclusive": true,
+   "timeout": 3600
+  }
+ ]
+}

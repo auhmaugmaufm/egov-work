@@ -1,0 +1,17 @@
+{
+  "name": "egov-eservice", "version": "1.0.0", "private": true,
+  "scripts": {
+    "start": "node src/app.js",
+    "test:unit": "node --test tests/unit/",
+    "test:e2e": "playwright test",
+    "typecheck:e2e": "tsc -p tests/e2e --noEmit"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0", "express": "^4.21.2", "multer": "^1.4.5-lts.1", "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1", "@axe-core/playwright": "^4.10.1", "pdf-parse": "^1.1.1",
+    "typescript": "^5.6.3", "@types/node": "^20.17.10"
+  }
+}

@@ -1,0 +1,199 @@
+{
+ "name": "egov-eservice",
+ "goal": "เว็บ e-Service กลาง เทศบาลนครตัวอย่าง (สมมติ) ตามชุดโจทย์ /workspace/egov-brief · Node.js 20 + Express + SQLite รันด้วย docker compose คำสั่งเดียว · รองรับ TEST_MODE=1 และ BUG_MODE ตาม BUGS.md · มี Playwright ครบ 51 TC · ทุกบล็อกทำตามสเปกใน /workspace/plans/egov-eservice/app/SPEC/ ที่สถาปนิกเขียนไว้แล้ว ห้ามออกแบบใหม่ ถ้าสเปกไม่ชัดให้เพิ่มหัวข้อใน SPEC/QUESTIONS-<บล็อก>.md แล้วทำส่วนที่ชัดต่อ",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงโปรเจกต์ + compose + DB schema + test hook + BUG_MODE + audit logger",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/app.js",
+   "detail": "อ่านเฉพาะ SPEC/00-OVERVIEW.md และ SPEC/B01.md (+ CONTRACT.md หัวข้อ 1 และ 8 ถ้าสเปกอ้างถึง) ห้ามอ่านไฟล์อื่นในโจทย์ · สร้าง Dockerfile docker-compose.yml package.json src/app.js src/core/{db,clock,bugmode,auth,audit,layout}.js ตามสเปก · app.js โหลด src/modules/*/routes.js อัตโนมัติ",
+   "done": "docker compose up -d --build แล้ว GET /api/health = 200 และ POST /api/test/reset = 200 เมื่อ TEST_MODE=1",
+   "exclusive": false
+  },
+  {
+   "id": "B02",
+   "title": "ไลบรารีกฎตัวเลข: วันทำการ/SLA · ค่าธรรมเนียม · checksum บัตร · ปิดบังเลข · เลขคำขอ · รูปแบบวันที่/เงิน",
+   "size": "S",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/core/rules.js",
+   "detail": "อ่านเฉพาะ SPEC/B02.md · เขียน src/core/rules.js + tests/unit/rules.test.js ครอบค่าขอบทุกแถวในสเปก · ฝังจุด BUG_MODE B01 B03 B04 ตามสเปก",
+   "done": "node --test tests/unit/rules.test.js ผ่านทุกข้อ (ค่าขอบตรงสเปก)",
+   "exclusive": false
+  },
+  {
+   "id": "B03",
+   "title": "Seed ข้อมูลตาม TEST-DATA (บัญชี บริการ วันหยุด 30+2 คำขอ เอกสาร ชำระเงิน คิว)",
+   "size": "M",
+   "depends_on": [
+    "B01"
+   ],
+   "skill": "yolo",
+   "difficulty": 1,
+   "output": "src/seed.js",
+   "detail": "อ่าน SPEC/B03.md และ /workspace/egov-brief/TEST-DATA.md (ค่าตายตัว ลอกตรงตัว) · reset เรียก seed.js",
+   "done": "หลัง reset นับแถวได้ตรงสเปก (คำขอ 32 · บัญชีตาม TEST-DATA ข้อ 1) และสคริปต์ตรวจ tests/unit/seed.test.js ผ่าน",
+   "exclusive": false
+  },
+  {
+   "id": "B04",
+   "title": "ยืนยันตัวตน ThaiD จำลอง + OTP lock + ลงทะเบียน + SSO เจ้าหน้าที่ + RBAC หน้า/API",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/auth/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B04.md · เขียนเฉพาะ src/modules/auth/",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B04.md ผ่านด้วย curl (status + ข้อความ error ตรงตัว)",
+   "exclusive": false
+  },
+  {
+   "id": "B05",
+   "title": "แคตตาล็อก + คำนวณค่าธรรมเนียม + ยื่นคำขอ/ร่าง/ยกเลิก + อัปโหลด (magic bytes · 5 MB · 5 ไฟล์)",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/cases/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B05.md · เขียนเฉพาะ src/modules/cases/ · ฝัง BUG_MODE B02 B06 ตามสเปก",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B05.md ผ่านด้วย curl",
+   "exclusive": false
+  },
+  {
+   "id": "B06",
+   "title": "ชำระเงิน PromptPay QR จำลอง (อายุ <15:00 · ยอดพอดี · idempotent · เลข EG/RC ข้ามปี · ไม่ซ้ำเมื่อพร้อมกัน)",
+   "size": "S",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/payment/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B06.md · เขียนเฉพาะ src/modules/payment/ · ฝัง BUG_MODE B05",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B06.md ผ่านด้วย curl",
+   "exclusive": false
+  },
+  {
+   "id": "B07",
+   "title": "Workflow + routing + คิว/รับเรื่อง (409) + ตีกลับ ≤2 + อนุมัติ/ไม่อนุมัติ + เวลาแก้ไข 168 ชม. + แจ้งเตือน SLA",
+   "size": "L",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/workflow/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B07.md · เขียนเฉพาะ src/modules/workflow/ · ฝัง BUG_MODE B07 B08 B12 · ใช้ฟังก์ชัน SLA จาก src/core/rules.js เท่านั้น",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B07.md ผ่านด้วย curl",
+   "exclusive": false
+  },
+  {
+   "id": "B08",
+   "title": "ออกเอกสาร HMAC-SHA256 + /verify + PDPA ปิดบัง/แสดงเลขเต็ม + หน้า Audit Trail (อ่านอย่างเดียว · 405)",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/docs/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B08.md · เขียนเฉพาะ src/modules/docs/ · ฝัง BUG_MODE B09 B11",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B08.md ผ่านด้วย curl",
+   "exclusive": false
+  },
+  {
+   "id": "B09",
+   "title": "Dashboard ผู้บริหาร + ส่งออก Excel/PDF",
+   "size": "M",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "src/modules/dashboard/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B09.md · เขียนเฉพาะ src/modules/dashboard/ · ฝัง BUG_MODE B10 · ตัวเลขต้องตรง TEST-DATA ข้อ 7 ที่ลอกไว้ในสเปก",
+   "done": "หลัง reset ตัวเลขทุก KPI ตรงตารางใน SPEC/B09.md (curl ดู data-testid)",
+   "exclusive": false
+  },
+  {
+   "id": "B10",
+   "title": "ผู้ดูแลระบบ: บริการ (ค่าธรรมเนียม SLA) · วันหยุด · ผู้ใช้/บทบาท · ช่วงค่าที่ยอมรับ",
+   "size": "S",
+   "depends_on": [
+    "B02",
+    "B03"
+   ],
+   "skill": "yolo",
+   "difficulty": 1,
+   "output": "src/modules/admin/routes.js",
+   "detail": "อ่านเฉพาะ SPEC/B10.md · เขียนเฉพาะ src/modules/admin/",
+   "done": "ทุกเคสในตารางตรวจของ SPEC/B10.md ผ่านด้วย curl",
+   "exclusive": false
+  },
+  {
+   "id": "T1",
+   "title": "Playwright ชุด A: AUTH FEE SUBMIT UPLOAD PAY QUEUE SLA NOTI (22 TC)",
+   "size": "L",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "tests/e2e/part-a.spec.ts",
+   "detail": "อ่านเฉพาะ SPEC/T.md + /workspace/egov-brief/TEST-PLAN.md (เฉพาะ TC ของชุดนี้) + CONTRACT.md + TEST-DATA.md · ห้ามอ่าน src/ · ทุก TC ขึ้นต้น POST /api/test/reset แล้วล็อกอินใหม่ · ชื่อ test ขึ้นต้นด้วยรหัส TC · assert ค่าตามการ์ดตรงตัว ห้ามเดาจากหน้าจอ · ใช้ helper ร่วม tests/e2e/helpers.ts ที่สเปกกำหนด (T1 เป็นคนสร้าง)",
+   "done": "npx playwright test --list แสดงครบ 22 TC ของชุด A และ tsc ไม่มี error",
+   "exclusive": false
+  },
+  {
+   "id": "T2",
+   "title": "Playwright ชุด B: WORKFLOW DOC PDPA DASH AUDIT RBAC NFR (29 TC)",
+   "size": "L",
+   "depends_on": [
+    "T1"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "tests/e2e/part-b.spec.ts",
+   "detail": "เหมือน T1 แต่ทำ TC ชุด B · ใช้ tests/e2e/helpers.ts ของ T1 ห้ามแก้ (ถ้าต้องเพิ่ม helper ให้เขียนใน tests/e2e/helpers-b.ts)",
+   "done": "npx playwright test --list แสดงครบ 29 TC ของชุด B และ tsc ไม่มี error",
+   "exclusive": false
+  },
+  {
+   "id": "Z1",
+   "title": "รวมระบบ + รัน Playwright 51 TC จนผ่าน + รัน BUG_MODE B01–B12 ทีละตัว",
+   "size": "L",
+   "depends_on": [
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10",
+    "T2"
+   ],
+   "skill": "yolo",
+   "difficulty": 2,
+   "output": "INTEGRATION.md",
+   "detail": "docker compose up · รันชุดเต็มด้วย TEST_MODE=1 · TC ที่ล้มให้จำแนก เว็บผิด/test ผิด/โจทย์ผิด อ้างกฎ · แก้เว็บหรือ test ให้ตรงการ์ด ห้ามแก้ค่าคาดหวังให้ตรงจอ · โจทย์ผิดให้จดคำถาม · จากนั้นรัน BUG_MODE ทีละตัวและบันทึกตาราง triage ตาม BUGS.md ข้อ 4",
+   "done": "INTEGRATION.md มีผล 51 TC (passed/failed) และตาราง BUG_MODE 12 แถว",
+   "exclusive": true
+  }
+ ]
+}
